@@ -33,85 +33,380 @@
         <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <p6spy.version>3.9.1</p6spy.version>
         <mybatis.plus.version>3.5.1</mybatis.plus.version>
+        <redisson.version>3.12.5</redisson.version>
+        <guava.version>29.0-jre</guava.version>
+        <codec.version>1.13</codec.version>
+        <hutool-all.version>5.7.7</hutool-all.version>
+        <commons-io.version>2.4</commons-io.version>
+        <collections4.version>4.4</collections4.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
     </properties>
 
     <modules>
         <module>hzp-boot-swagger-starter</module>
         <module>hzp-boot-mybatis-starter</module>
-        <module>hzp-boot-cache-starter</module>
         <module>hzp-framework</module>
+        <module>hzp-utils</module>
+        <module>hzp-boot-trace-starter</module>
     </modules>
 
+    <dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>${spring-cloud.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-            <version>${spring-cloud-alibaba.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <dependency>
-            <groupId>p6spy</groupId>
-            <artifactId>p6spy</artifactId>
-            <version>${p6spy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis.plus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>${springfox-boot-starter.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.peng</groupId>-->
-<!--            <artifactId>hzp-boot-swagger-starter</artifactId>-->
-<!--            <version>${hzp-boot.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.peng</groupId>-->
-<!--            <artifactId>hzp-boot-mybatis-starter</artifactId>-->
-<!--            <version>${hzp-boot.version}</version>-->
-<!--        </dependency>-->
 
-    </dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-rabbit</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-mq</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-jdbc</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-utils</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-core</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-exception</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>com.hzp</groupId>
+                <artifactId>hzp-boot-excel-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-mq-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-rabbit-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-web-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-mybatis-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ccom.peng</groupId>
+                <artifactId>hzp-boot-trace-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-security-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-log4j-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-lock-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-sms-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-swagger-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-cache-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-base-svc-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-email-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-logger-mongo-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-logger-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-admin-client-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-sharding-jdbc-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-dynamic-datasource-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-job-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-feign-starter</artifactId>
+                <version>${${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-notify-client-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxljob.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${collections4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${codec.version}</version>
+
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <!--swagger2 api在线文档-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+
+            <!-- 敏感配置加密 -->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding-jdbc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easy-excel.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi-ooxml</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi-ooxml-schemas</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${pinyin4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jul</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.peng</groupId>
+                <artifactId>hzp-boot-http-client-starter</artifactId>
+                <version>${hzp-boot.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <build>
-<!--        <pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-clean-plugin</artifactId>-->
-<!--                    <version>3.1.0</version>-->
-<!--                </plugin>-->
-<!--            </plugins>-->
-<!--        </pluginManagement>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-site-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <locales>en,fr</locales>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
     </build>
 </project>
