@@ -48,6 +48,8 @@
         <module>hzp-framework</module>
         <module>hzp-utils</module>
         <module>hzp-boot-trace-starter</module>
+        <module>hzp-boot-rabbit-starter</module>
+        <module>hzp-boot-mq-starter</module>
     </modules>
 
     <dependencyManagement>
