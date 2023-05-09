@@ -1,6 +1,6 @@
 package com.hzp.trace.config;
 
-import com.hzp.trace.interceptor.TraceRouterInterceptor;
+import com.hzp.trace.interceptor.LogTraceInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -17,6 +17,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new TraceRouterInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new LogTraceInterceptor()).addPathPatterns("/**");
     }
 }

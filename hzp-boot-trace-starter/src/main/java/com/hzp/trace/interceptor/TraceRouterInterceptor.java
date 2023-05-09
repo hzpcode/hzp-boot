@@ -15,6 +15,9 @@ import java.util.UUID;
  * @author Yu
  * @date 2020/04/20 22:41
  **/
+// todo 这里用HandlerInterceptorAdapter为什么有坑
+    // 慎用Spring HandlerInterceptorAdapter HandlerInterceptor 拦截器
+@Deprecated
 public class TraceRouterInterceptor extends HandlerInterceptorAdapter {
 
     @Override

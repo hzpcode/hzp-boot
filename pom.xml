@@ -129,7 +129,7 @@
                 <version>${hzp-boot.version}</version>
             </dependency>
             <dependency>
-                <groupId>ccom.peng</groupId>
+                <groupId>com.peng</groupId>
                 <artifactId>hzp-boot-trace-starter</artifactId>
                 <version>${hzp-boot.version}</version>
             </dependency>

@@ -2,6 +2,7 @@ package com.hzp.mq.base.sender;
 
 import com.hzp.mq.base.model.dto.Message;
 import com.hzp.mq.tx.model.po.TransactionalMessage;
+import com.hzp.web.constant.TraceConstant;
 import com.hzp.web.exception.BizException;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -37,8 +38,7 @@ public class MessageQueueDispatcher {
         }
 
         if (StringUtils.isBlank(defaultMessage.getTraceId())) {
-            // todo
-//            defaultMessage.setTraceId(MDC.get(TraceConstant.TRACE_ID_NAME));
+            defaultMessage.setTraceId(MDC.get(TraceConstant.TRACE_ID_NAME));
         }
 
         sender.ifPresent(o -> o.sendTransactionalMessage(defaultMessage));
