@@ -50,6 +50,8 @@
         <module>hzp-boot-trace-starter</module>
         <module>hzp-boot-rabbit-starter</module>
         <module>hzp-boot-mq-starter</module>
+        <module>hzp-boot-cache-starter</module>
+        <module>hzp-boot-web-starter</module>
     </modules>
 
     <dependencyManagement>

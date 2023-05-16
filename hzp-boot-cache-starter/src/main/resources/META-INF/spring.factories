@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.hzp.cache.config.MultiCacheAutoConfiguration,\
+  com.hzp.cache.config.MultiCacheAutoConfiguration.MultiCacheManagerAutoConfiguration
+

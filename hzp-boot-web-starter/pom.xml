@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.peng</groupId>
+        <artifactId>hzp-boot</artifactId>
+        <version>1.0.3</version>
+    </parent>
+
+    <artifactId>hzp-boot-web-starter</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+<!--        todo-->
+<!--        <dependency>-->
+<!--            <groupId>com.peng</groupId>-->
+<!--            <artifactId>hzp-boot-logger-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.peng</groupId>
+            <artifactId>hzp-boot-trace-starter</artifactId>
+        </dependency>
+
+<!--        todo-->
+<!--        <dependency>-->
+<!--            <groupId>com.peng</groupId>-->
+<!--            <artifactId>hzp-boot-email-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.peng</groupId>
+            <artifactId>hzp-utils</artifactId>
+        </dependency>
+
+        <dependency> <!-- exclude掉spring-boot的默认log配置 -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--swagger2 api在线文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.peng</groupId>
+            <artifactId>hzp-core</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>
